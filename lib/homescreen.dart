@@ -22,12 +22,23 @@ class HomeScreen extends StatelessWidget {
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
-        // crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Center(
             child: ElevatedButton(
               onPressed: () {
-                Get.defaultDialog(title: 'GetX Dialog');
+                Get.defaultDialog(
+                  title: 'GetX Dialog',
+                  middleText: 'Dialog Box With Getx',
+                  contentPadding: const EdgeInsets.all(20),
+                  confirm: TextButton(
+                    onPressed: () {},
+                    child: const Text('Yes'),
+                  ),
+                  content: TextButton(
+                    onPressed: () {},
+                    child: const Text('No'),
+                  ),
+                );
 
                 if (kDebugMode) {
                   print('Yes It A $kDebugMode');
