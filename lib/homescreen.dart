@@ -1,5 +1,6 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/route_manager.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -9,8 +10,13 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.redAccent,
         title: const Text(
           'Getx Tutorial',
+          style: TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.w700,
+          ),
         ),
       ),
       body: Column(
@@ -26,9 +32,10 @@ class HomeScreen extends StatelessWidget {
             ),
             colorText: Colors.white,
             backgroundColor: Colors.blue,
-            snackPosition: SnackPosition.TOP,
+            snackPosition:
+                Platform.isAndroid ? SnackPosition.BOTTOM : SnackPosition.TOP,
             icon: Icon(
-              Platform.isIOS ? Icons.message : Icons.message,
+              Platform.isIOS ? Icons.emoji_emotions_sharp : Icons.chat,
               color: Colors.white,
             ),
           );
