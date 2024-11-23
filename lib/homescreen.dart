@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/route_manager.dart';
@@ -20,7 +21,31 @@ class HomeScreen extends StatelessWidget {
         ),
       ),
       body: Column(
-        children: [],
+        mainAxisAlignment: MainAxisAlignment.center,
+        // crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Center(
+            child: ElevatedButton(
+              onPressed: () {
+                Get.defaultDialog(title: 'GetX Dialog');
+
+                if (kDebugMode) {
+                  print('Yes It A $kDebugMode');
+                } else {
+                  print('Its a Other Mode');
+                }
+              },
+              child: const Text(
+                'Dilog Alert In GetX',
+                style: TextStyle(
+                  fontSize: 20,
+                  color: Colors.redAccent,
+                  fontWeight: FontWeight.w700,
+                ),
+              ),
+            ),
+          ),
+        ],
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
@@ -33,7 +58,7 @@ class HomeScreen extends StatelessWidget {
             colorText: Colors.white,
             backgroundColor: Colors.blue,
             snackPosition:
-                Platform.isAndroid ? SnackPosition.BOTTOM : SnackPosition.TOP,
+                Platform.isAndroid ? SnackPosition.TOP : SnackPosition.BOTTOM,
             icon: Icon(
               Platform.isIOS ? Icons.emoji_emotions_sharp : Icons.chat,
               color: Colors.white,
