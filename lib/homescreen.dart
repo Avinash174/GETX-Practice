@@ -31,12 +31,25 @@ class HomeScreen extends StatelessWidget {
                   middleText: 'Dialog Box With Getx',
                   contentPadding: const EdgeInsets.all(20),
                   confirm: TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Get.back();
+                    },
                     child: const Text('Yes'),
                   ),
-                  content: TextButton(
-                    onPressed: () {},
+                  cancel: TextButton(
+                    onPressed: () {
+                      Get.back();
+                    },
                     child: const Text('No'),
+                  ),
+                  content: Column(
+                    children: [
+                      Text('data'),
+                      Text('data'),
+                      Text('data'),
+                      Text('data'),
+                      Text('data'),
+                    ],
                   ),
                 );
 
@@ -56,6 +69,53 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
           ),
+          Card(
+            child: ListTile(
+              title: Text('GetX BottomSheet'),
+              subtitle: Text('GetX Dialog Box'),
+              onTap: () {
+                Get.bottomSheet(
+                  Container(
+                    height: 200,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadiusDirectional.circular(
+                        15,
+                      ),
+                      color: Colors.blueAccent,
+                    ),
+                    child: Column(
+                      children: [
+                        ListTile(
+                          onTap: () {
+                            print("Button press light");
+                            Get.changeTheme(
+                              ThemeData.light(),
+                            );
+                          },
+                          leading: const Icon(
+                            Icons.light_mode,
+                          ),
+                          title: Text(
+                            'Light Mode',
+                          ),
+                        ),
+                        ListTile(
+                          onTap: () {
+                            print("Button press dark");
+                            Get.changeTheme(ThemeData.dark());
+                          },
+                          leading: const Icon(
+                            Icons.dark_mode,
+                          ),
+                          title: const Text('Dark Mode'),
+                        ),
+                      ],
+                    ),
+                  ),
+                );
+              },
+            ),
+          )
         ],
       ),
       floatingActionButton: FloatingActionButton(
