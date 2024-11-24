@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
 
 class SecondPage extends StatefulWidget {
-  String name;
+  var name;
   SecondPage({
-    Key? key,
+    super.key,
     this.name = '',
-  }) : super(key: key);
+  });
 
   @override
   State<SecondPage> createState() => _SecondPageState();
@@ -18,7 +18,9 @@ class _SecondPageState extends State<SecondPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Second Screen' + widget.name),
+        title: Text(
+          'Second Screen ${Get.arguments[1]}',
+        ),
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,

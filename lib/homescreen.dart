@@ -39,9 +39,7 @@ class HomeScreen extends StatelessWidget {
                   ),
                   cancel: TextButton(
                     onPressed: () {
-                      Get.to(
-                        const NavigationScreen(),
-                      );
+                      Get.toNamed('/navigation');
                     },
                     child: const Text('No'),
                   ),
@@ -74,8 +72,8 @@ class HomeScreen extends StatelessWidget {
           ),
           Card(
             child: ListTile(
-              title: Text('GetX BottomSheet'),
-              subtitle: Text('GetX Dialog Box'),
+              title: const Text('GetX BottomSheet'),
+              subtitle: const Text('GetX Dialog Box'),
               onTap: () {
                 Get.bottomSheet(
                   Container(
@@ -98,7 +96,7 @@ class HomeScreen extends StatelessWidget {
                           leading: const Icon(
                             Icons.light_mode,
                           ),
-                          title: Text(
+                          title: const Text(
                             'Light Mode',
                           ),
                         ),
