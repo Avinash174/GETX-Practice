@@ -35,7 +35,9 @@ class _NavigationScreenState extends State<NavigationScreen> {
           Center(
             child: TextButton(
               onPressed: () {
-                Get.to(const SecondPage());
+                Get.to(SecondPage(
+                  name: ' Avinash Welcome ',
+                ));
               },
               child: const Text(
                 'Go To Next Screen With GetX',
