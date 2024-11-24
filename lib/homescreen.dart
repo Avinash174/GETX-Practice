@@ -2,7 +2,9 @@ import 'dart:io';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:get/get.dart';
 import 'package:get/route_manager.dart';
+import 'package:getx_practice/navigation.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -38,11 +40,13 @@ class HomeScreen extends StatelessWidget {
                   ),
                   cancel: TextButton(
                     onPressed: () {
-                      Get.back();
+                      Get.to(
+                        const NavigationScreen(),
+                      );
                     },
                     child: const Text('No'),
                   ),
-                  content: Column(
+                  content: const Column(
                     children: [
                       Text('data'),
                       Text('data'),
