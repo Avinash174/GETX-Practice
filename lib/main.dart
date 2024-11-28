@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
 import 'package:getx_practice/getx_hw.dart';
+import 'package:getx_practice/getx_local.dart';
 import 'package:getx_practice/homescreen.dart';
+import 'package:getx_practice/language.dart';
 import 'package:getx_practice/navigation.dart';
 import 'package:getx_practice/second_page.dart';
 
@@ -21,6 +23,9 @@ class MyApp extends StatelessWidget {
       themeMode: ThemeMode.light,
       debugShowCheckedModeBanner: false,
       home: const HomeScreen(),
+      locale: Locale('en', 'US'),
+      translations: Language(),
+      fallbackLocale: const Locale('en', 'us'),
       getPages: [
         GetPage(
           name: '/',
@@ -37,7 +42,11 @@ class MyApp extends StatelessWidget {
         GetPage(
           name: '/getxhw',
           page: () => const GetXHW(),
-        )
+        ),
+        GetPage(
+          name: '/getlocal',
+          page: () => const GetXLan(),
+        ),
       ],
     );
   }

@@ -57,6 +57,19 @@ class _NavigationScreenState extends State<NavigationScreen> {
                 'Heigth & Weight',
               ),
             ),
+          ),
+          Center(
+            child: TextButton(
+              onPressed: () {
+                Get.toNamed('getlocal');
+              },
+              child: const Text(
+                'Language Change',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
           )
         ],
       ),
