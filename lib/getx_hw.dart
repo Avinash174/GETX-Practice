@@ -20,7 +20,8 @@ class _GetXHWState extends State<GetXHW> {
           Container(
             // height: MediaQuery.of(context).size.height * .7, using media quary
             // height: 100, static
-            height: Get.height * .5, // using getx
+            height: Get.height * .2, // using getx
+            width: Get.width * .65,
             color: Colors.amber,
             child: const Center(
               child: Text(
@@ -32,10 +33,14 @@ class _GetXHWState extends State<GetXHW> {
               ),
             ),
           ),
+          SizedBox(
+            height: Get.height * .02,
+          ),
           Container(
             // height: MediaQuery.of(context).size.height * .7, using media quary
             // height: 100, static
-            height: Get.height * .5, // using getx
+            height: Get.height * .2, // using getx
+            width: Get.width * .9,
             color: Colors.blue,
             child: const Center(
               child: Text(
