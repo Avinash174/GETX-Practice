@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:get/route_manager.dart';
+import 'package:getx_practice/getx_hw.dart';
 import 'package:getx_practice/homescreen.dart';
 import 'package:getx_practice/second_page.dart';
 
@@ -47,6 +49,17 @@ class _NavigationScreenState extends State<NavigationScreen> {
               ),
             ),
           ),
+          Center(
+            child: TextButton(
+              onPressed: () {
+                // Get.toNamed('/getxhw');
+                Get.to(GetXHW());
+              },
+              child: const Text(
+                'Heigth & Weight',
+              ),
+            ),
+          )
         ],
       ),
     );
