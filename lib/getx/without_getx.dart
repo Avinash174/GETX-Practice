@@ -12,12 +12,13 @@ class WithoutGetx extends StatefulWidget {
 
 class _WithoutGetxState extends State<WithoutGetx> {
   int a = 1;
+  int x = 1;
 
   @override
   void initState() {
     super.initState();
-    Timer(Duration(seconds: 1), () {
-      a++;
+    Timer.periodic(const Duration(seconds: 1), (timer) {
+      x++;
       setState(() {});
     });
   }
@@ -32,11 +33,22 @@ class _WithoutGetxState extends State<WithoutGetx> {
         ),
       ),
       body: Center(
-        child: Text(
-          a.toString(),
-          style: const TextStyle(
-            fontSize: 20,
-          ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              x.toString(),
+              style: const TextStyle(
+                fontSize: 20,
+              ),
+            ),
+            Text(
+              a.toString(),
+              style: const TextStyle(
+                fontSize: 20,
+              ),
+            ),
+          ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
