@@ -1,6 +1,9 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_state_manager/get_state_manager.dart';
+import 'package:getx_practice/getx/example_controller.dart';
 
 class ThirdExample extends StatefulWidget {
   const ThirdExample({super.key});
@@ -10,6 +13,7 @@ class ThirdExample extends StatefulWidget {
 }
 
 class _ThirdExampleState extends State<ThirdExample> {
+  ExampleController exampleController = Get.put(ExampleController());
   bool notification = false;
   @override
   Widget build(BuildContext context) {
@@ -37,13 +41,17 @@ class _ThirdExampleState extends State<ThirdExample> {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              Switch(
-                value: notification,
-                onChanged: (value) {
-                  setState(() {
-                    notification = value;
-                  });
-                },
+              Obx(
+                () => Switch(
+                  value: exampleController.notification.value,
+                  onChanged: (value) {
+                    // setState(() {
+                    //   notification = value;
+                    // });
+                    exampleController.setNotification(value);
+                    log('$value');
+                  },
+                ),
               ),
             ],
           )
