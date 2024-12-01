@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
+import 'package:getx_practice/getx/without_getx.dart';
 import 'package:getx_practice/getx_hw.dart';
 import 'package:getx_practice/getx_local.dart';
 import 'package:getx_practice/homescreen.dart';
@@ -22,14 +23,14 @@ class MyApp extends StatelessWidget {
       darkTheme: ThemeData.dark(),
       themeMode: ThemeMode.light,
       debugShowCheckedModeBanner: false,
-      home: const HomeScreen(),
+      home: const WithoutGetx(),
       locale: Locale('en', 'US'),
       translations: Language(),
       fallbackLocale: const Locale('en', 'us'),
       getPages: [
         GetPage(
           name: '/',
-          page: () => const HomeScreen(),
+          page: () => const WithoutGetx(),
         ),
         GetPage(
           name: '/second',
