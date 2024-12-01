@@ -2,6 +2,8 @@ import 'dart:async';
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:getx_practice/getx/counter_controller.dart';
 
 class WithoutGetx extends StatefulWidget {
   const WithoutGetx({super.key});
@@ -14,18 +16,16 @@ class _WithoutGetxState extends State<WithoutGetx> {
   int a = 1;
   int x = 1;
 
+  final CounterController controller1 = Get.put(CounterController());
+
   @override
   void initState() {
     super.initState();
-    Timer.periodic(const Duration(milliseconds: 1), (timer) {
-      x++;
-      setState(() {});
-    });
   }
 
   @override
   Widget build(BuildContext context) {
-    log('Build Rebuild From Here');
+    log('Rebuild From Here');
     return Scaffold(
       appBar: AppBar(
         title: const Text(
@@ -33,28 +33,19 @@ class _WithoutGetxState extends State<WithoutGetx> {
         ),
       ),
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              x.toString(),
-              style: const TextStyle(
-                fontSize: 20,
-              ),
+        child: Obx(() {
+          log('This Widget Get Only Rebuild');
+          return Text(
+            '${controller1.counter}',
+            style: const TextStyle(
+              fontSize: 20,
             ),
-            Text(
-              a.toString(),
-              style: const TextStyle(
-                fontSize: 20,
-              ),
-            ),
-          ],
-        ),
+          );
+        }),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          a++;
-          setState(() {});
+          controller1.increment();
         },
       ),
     );
