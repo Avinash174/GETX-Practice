@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
 import 'package:getx_practice/getx/another_example.dart';
 import 'package:getx_practice/getx/example_two.dart';
+import 'package:getx_practice/getx/third_example.dart';
 import 'package:getx_practice/getx/without_getx.dart';
 import 'package:getx_practice/getx_hw.dart';
 import 'package:getx_practice/getx_local.dart';
@@ -25,7 +26,7 @@ class MyApp extends StatelessWidget {
       darkTheme: ThemeData.dark(),
       themeMode: ThemeMode.light,
       debugShowCheckedModeBanner: false,
-      home: const AnotherExampleGetX(),
+      home: const ThirdExample(),
       locale: const Locale('en', 'US'),
       translations: Language(),
       fallbackLocale: const Locale('en', 'us'),
