@@ -25,7 +25,7 @@ class _AnotherExampleGetXState extends State<AnotherExampleGetX> {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          'Opacity Without GetX',
+          'Opacity GetX',
           style: TextStyle(
             color: Colors.white,
           ),
