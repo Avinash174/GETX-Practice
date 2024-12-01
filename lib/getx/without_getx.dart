@@ -17,7 +17,7 @@ class _WithoutGetxState extends State<WithoutGetx> {
   @override
   void initState() {
     super.initState();
-    Timer.periodic(const Duration(seconds: 1), (timer) {
+    Timer.periodic(const Duration(milliseconds: 1), (timer) {
       x++;
       setState(() {});
     });
