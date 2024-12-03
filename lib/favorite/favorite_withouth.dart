@@ -10,6 +10,13 @@ class FavoriteWithoutGetX extends StatefulWidget {
 class _FavoriteWithoutGetXState extends State<FavoriteWithoutGetX> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Favourite App'),
+      ),
+      body: ListView.builder(itemBuilder: (context, index) {
+        return ListTile();
+      }),
+    );
   }
 }
