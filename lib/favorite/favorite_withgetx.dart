@@ -1,6 +1,10 @@
 import 'dart:io';
+import 'dart:math';
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:getx_practice/favorite/favorite_controller.dart';
 
 class FavouriteGetx extends StatefulWidget {
   const FavouriteGetx({super.key});
@@ -10,51 +14,54 @@ class FavouriteGetx extends StatefulWidget {
 }
 
 class _FavouriteGetxState extends State<FavouriteGetx> {
-  List<String> fruitList = [
-    'Apple',
-    'Banana',
-    'Strawberry',
-    'Blueberry',
-    'Grapes',
-    'Mango',
-    'Pineapple',
-    'Watermelon',
-    'Orange',
-    'Avocado',
-  ];
-  List<String> tempFruitList = [];
+  FavouriteController favouriteController = Get.put(FavouriteController());
   @override
   Widget build(BuildContext context) {
+    if (kDebugMode) {
+      print('build');
+    }
     return Scaffold(
       appBar: AppBar(
         title: const Text(
           'Favorite With App',
+          style: TextStyle(
+            color: Colors.white,
+          ),
         ),
+        backgroundColor: Colors.pinkAccent,
       ),
       body: ListView.builder(
-          itemCount: fruitList.length,
+          itemCount: favouriteController.fruitList.length,
           itemBuilder: (context, index) {
             return Card(
               child: ListTile(
-                onTap: () {
-                  setState(() {
-                    tempFruitList.add(
-                      fruitList[index].toString(),
-                    );
-                  });
-                },
-                title: Text(
-                  fruitList[index].toString(),
-                ),
-                trailing: Icon(
-                  Platform.isAndroid ? Icons.favorite : Icons.favorite_outlined,
-                  color: tempFruitList.contains(
-                    fruitList[index].toString(),
-                  )
-                      ? Colors.red
-                      : Colors.white,
-                ),
-              ),
+                  onTap: () {
+                    setState(() {
+                      if (favouriteController.tempFruitList.contains(
+                          favouriteController.fruitList[index].toString())) {
+                        favouriteController.removeToFavorite(
+                            favouriteController.fruitList[index].toString());
+                      } else {
+                        favouriteController.addToFavorite(
+                            favouriteController.fruitList[index].toString());
+                      }
+                    });
+                  },
+                  title: Text(
+                    favouriteController.fruitList[index].toString(),
+                  ),
+                  trailing: Obx(
+                    () => Icon(
+                      Platform.isAndroid
+                          ? Icons.favorite
+                          : Icons.favorite_outlined,
+                      color: favouriteController.tempFruitList.contains(
+                        favouriteController.fruitList[index].toString(),
+                      )
+                          ? Colors.red
+                          : Colors.white,
+                    ),
+                  )),
             );
           }),
     );
