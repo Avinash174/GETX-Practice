@@ -2,14 +2,14 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 
-class FavoriteWithoutGetX extends StatefulWidget {
-  const FavoriteWithoutGetX({super.key});
+class FavouriteGetx extends StatefulWidget {
+  const FavouriteGetx({super.key});
 
   @override
-  State<FavoriteWithoutGetX> createState() => _FavoriteWithoutGetXState();
+  State<FavouriteGetx> createState() => _FavouriteGetxState();
 }
 
-class _FavoriteWithoutGetXState extends State<FavoriteWithoutGetX> {
+class _FavouriteGetxState extends State<FavouriteGetx> {
   List<String> fruitList = [
     'Apple',
     'Banana',
@@ -27,12 +27,8 @@ class _FavoriteWithoutGetXState extends State<FavoriteWithoutGetX> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.redAccent,
         title: const Text(
-          'Favourite WithoutGetx App',
-          style: TextStyle(
-            color: Colors.white,
-          ),
+          'Favorite With App',
         ),
       ),
       body: ListView.builder(
