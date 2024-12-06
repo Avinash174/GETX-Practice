@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
       darkTheme: ThemeData.dark(),
       themeMode: ThemeMode.light,
       debugShowCheckedModeBanner: false,
-      home: const ImagePickerWithGetx(),
+      home: const HomeScreen(),
       locale: const Locale('en', 'US'),
       translations: Language(),
       fallbackLocale: const Locale('en', 'us'),
