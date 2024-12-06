@@ -4,6 +4,7 @@ import 'package:getx_practice/getx/another_example.dart';
 import 'package:getx_practice/getx_hw.dart';
 import 'package:getx_practice/getx_local.dart';
 import 'package:getx_practice/homescreen.dart';
+import 'package:getx_practice/image_picker/image_picker.dart';
 import 'package:getx_practice/language.dart';
 import 'package:getx_practice/navigation.dart';
 import 'package:getx_practice/second_page.dart';
@@ -23,7 +24,7 @@ class MyApp extends StatelessWidget {
       darkTheme: ThemeData.dark(),
       themeMode: ThemeMode.light,
       debugShowCheckedModeBanner: false,
-      home: const HomeScreen(),
+      home: const ImagePickerTry(),
       locale: const Locale('en', 'US'),
       translations: Language(),
       fallbackLocale: const Locale('en', 'us'),
