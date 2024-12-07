@@ -23,18 +23,29 @@ class _ImagePickerTryState extends State<ImagePickerTry> {
       ),
       body: Obx(() {
         return Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            CircleAvatar(
-              radius: 45,
-              backgroundImage: controller.imagePath.isEmpty
-                  ? FileImage(File(controller.imagePath.toString()))
-                  : null,
+            Center(
+              child: CircleAvatar(
+                radius: 45,
+                backgroundImage: controller.imagePath.isNotEmpty
+                    ? FileImage(File(controller.imagePath.toString()))
+                    : null,
+              ),
             ),
             TextButton(
-                onPressed: () {
-                  controller.getImage();
-                },
-                child: const Text('Pick Image')),
+              onPressed: () {
+                controller.getImageFromCamera();
+              },
+              child: const Text('Pick Image'),
+            ),
+            TextButton(
+              onPressed: () {
+                controller.getImageFromGallery();
+              },
+              child: const Text('Take Image From Gallary'),
+            ),
           ],
         );
       }),
