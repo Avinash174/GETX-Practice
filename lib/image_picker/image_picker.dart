@@ -18,6 +18,7 @@ class _ImagePickerTryState extends State<ImagePickerTry> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.red,
         title: const Text('Image Picker'),
       ),
       body: Obx(() {
