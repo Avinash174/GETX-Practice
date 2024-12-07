@@ -19,7 +19,12 @@ class _ImagePickerTryState extends State<ImagePickerTry> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.red,
-        title: const Text('Image Picker'),
+        title: const Text(
+          'Image Picker',
+          style: TextStyle(
+            color: Colors.white,
+          ),
+        ),
       ),
       body: Obx(() {
         return Column(
