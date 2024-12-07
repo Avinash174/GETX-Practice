@@ -10,6 +10,22 @@ class ImagePickerTry extends StatefulWidget {
 class _ImagePickerTryState extends State<ImagePickerTry> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Image Picker'),
+      ),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          const Center(
+            child: CircleAvatar(
+              radius: 45,
+            ),
+          ),
+          TextButton(onPressed: () {}, child: const Text('Pick Image'))
+        ],
+      ),
+    );
   }
 }
