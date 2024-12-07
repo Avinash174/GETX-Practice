@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
       darkTheme: ThemeData.dark(),
       themeMode: ThemeMode.light,
       debugShowCheckedModeBanner: false,
-      home: const ImagePickerTry(),
+      home: ImagePickerTry(),
       locale: const Locale('en', 'US'),
       translations: Language(),
       fallbackLocale: const Locale('en', 'us'),
