@@ -1,4 +1,8 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:getx_practice/image_picker/image_controller.dart';
 
 class ImagePickerTry extends StatefulWidget {
   const ImagePickerTry({super.key});
@@ -8,24 +12,31 @@ class ImagePickerTry extends StatefulWidget {
 }
 
 class _ImagePickerTryState extends State<ImagePickerTry> {
+  ImagePickerController controller = Get.put(ImagePickerController());
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Image Picker'),
       ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          const Center(
-            child: CircleAvatar(
+      body: Obx(() {
+        return Column(
+          children: [
+            CircleAvatar(
               radius: 45,
+              backgroundImage: controller.imagePath.isEmpty
+                  ? FileImage(File(controller.imagePath.toString()))
+                  : null,
             ),
-          ),
-          TextButton(onPressed: () {}, child: const Text('Pick Image'))
-        ],
-      ),
+            TextButton(
+                onPressed: () {
+                  controller.getImage();
+                },
+                child: const Text('Pick Image')),
+          ],
+        );
+      }),
     );
   }
 }
