@@ -7,9 +7,11 @@ import 'package:http/http.dart';
 class LogInController extends GetxController {
   final emailController = TextEditingController().obs;
   final passwordController = TextEditingController().obs;
+  RxBool loading = false.obs;
 
   void loginApi() async {
     try {
+      loading.value = true;
       final response =
           await post(Uri.parse('https://reqres.in/api/login'), body: {
         'email': emailController.value.text,
@@ -19,14 +21,17 @@ class LogInController extends GetxController {
       log('$response.statusCode');
       log('$data');
       if (response.statusCode == 200) {
-        Get.snackbar('Login Sucessful', data['error']);
+        loading.value = false;
+        Get.snackbar('Login Sucessful', 'congratulation');
       } else {
+        loading.value = false;
         Get.snackbar(
           'Login Failed',
           data['error'],
         );
       }
     } catch (e) {
+      loading.value = false;
       Get.snackbar('Execption', e.toString());
     }
   }

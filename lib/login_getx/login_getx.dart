@@ -42,23 +42,37 @@ class _LogInWithGetXState extends State<LogInWithGetX> {
             SizedBox(
               height: Get.height * .04,
             ),
-            InkWell(
-              onTap: () {
-                controller.loginApi();
-              },
-              child: Container(
-                height: Get.height * .05,
-                color: Colors.orangeAccent,
-                child: const Center(
-                  child: Text(
-                    'Log In',
-                    style: TextStyle(
-                      color: Colors.white,
-                    ),
-                  ),
-                ),
+            Obx(
+              () => InkWell(
+                onTap: () {
+                  controller.loginApi();
+                },
+                child: controller.loading.value
+                    ? CircularProgressIndicator()
+                    : Container(
+                        height: Get.height * .05,
+                        color: Colors.orangeAccent,
+                        child: const Center(
+                          child: Text(
+                            'Log In',
+                            style: TextStyle(
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
+                      ),
               ),
-            )
+            ),
+            SizedBox(
+              height: Get.height * .04,
+            ),
+            const Text(
+              'email : eve.holt@reqres.in',
+            ),
+            SizedBox(
+              height: Get.height * .015,
+            ),
+            const Text('Password : cityslicka'),
           ],
         ),
       ),
