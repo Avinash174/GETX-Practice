@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:getx_practice/homescreen.dart';
 import 'package:http/http.dart';
 
 class LogInController extends GetxController {
@@ -23,6 +24,7 @@ class LogInController extends GetxController {
       if (response.statusCode == 200) {
         loading.value = false;
         Get.snackbar('Login Sucessful', 'congratulation');
+        Get.to(const HomeScreen());
       } else {
         loading.value = false;
         Get.snackbar(
