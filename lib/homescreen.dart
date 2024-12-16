@@ -3,12 +3,9 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/route_manager.dart';
-import 'package:getx_practice/favorite/favorite_controller.dart';
 import 'package:getx_practice/favorite/favorite_withgetx.dart';
 import 'package:getx_practice/getx_hw.dart';
 import 'package:getx_practice/image_picker/image_picker.dart';
-import 'package:getx_practice/navigation.dart';
-import 'package:image_picker/image_picker.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
