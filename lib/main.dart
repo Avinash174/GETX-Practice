@@ -3,8 +3,6 @@ import 'package:get/route_manager.dart';
 import 'package:getx_practice/getx/another_example.dart';
 import 'package:getx_practice/getx_hw.dart';
 import 'package:getx_practice/getx_local.dart';
-import 'package:getx_practice/homescreen.dart';
-import 'package:getx_practice/image_picker/image_picker.dart';
 import 'package:getx_practice/language.dart';
 import 'package:getx_practice/login_getx/login_getx.dart';
 import 'package:getx_practice/navigation.dart';
